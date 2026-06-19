@@ -7,6 +7,21 @@ This is our first-semester project: a professional and robust implementation of 
 
 ---
 
+### 🚀 Key Features
+* **Smooth Gameplay Loop:** Optimized frame-rate handling for responsive snake movement.
+* **Dynamic Speed Scaling:** The game increases in difficulty and speed as your score grows.
+* **Collision Detection:** Strict boundary tracking for self-collisions and wall-collisions.
+* **Local Score Tracking:** Keeps track of your current game score in real-time.
+
+
+### 🎮 Controls
+* `W` — Move Up
+* `A` — Move Left
+* `S` — Move Down
+* `D` — Move Right
+
+---
+
 ## 👥 Group Information
 
 | <img src="https://img.shields.io/badge/Serial--Number-333333?style=for-the-badge" alt="SL"/> | <img src="https://img.shields.io/badge/Full--Name-d73a49?style=for-the-badge" alt="Name"/> | <img src="https://img.shields.io/badge/Student--ID-0052cc?style=for-the-badge" alt="ID"/> | <img src="https://img.shields.io/badge/GitHub--Profile-Bright Retro Green?style=for-the-badge" alt="GitHub"/> |
