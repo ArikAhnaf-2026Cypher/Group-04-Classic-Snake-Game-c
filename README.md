@@ -8,6 +8,7 @@ This is our first-semester project: a professional and robust implementation of 
 ---
 
 ### 🚀 Key Features
+* **Classic Gameplay:** Navigate the snake using arrow keys to collect food and grow longer.
 * **Smooth Gameplay Loop:** Optimized frame-rate handling for responsive snake movement.
 * **Dynamic Speed Scaling:** The game increases in difficulty and speed as your score grows.
 * **Collision Detection:** Strict boundary tracking for self-collisions and wall-collisions.
