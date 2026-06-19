@@ -16,7 +16,7 @@ This is our first-semester project: a professional and robust implementation of 
 | 03 | ***Jannatul Tufa Rodela***  | **`2622542042`** | |
 | 04 | ***Mohammad Farhan Sadik***  | **`2625442042`** | [@mohammadfarhansadik262](https://github.com/mohammadfarhansadik262) |
 
-Course: **CSE115** | Section: **04** | Faculty: **MSRb***
+*Course: **CSE115** | Section: **04** | Faculty: **MSRb***
 
 ---
 
