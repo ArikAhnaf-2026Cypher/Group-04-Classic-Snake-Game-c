@@ -49,3 +49,15 @@ This repository strictly follows the course layout rules:
 ```bash
 git clone https://github.com/ArikAhnaf-2026Cypher/Group-04-Classic-Snake-Game-c.git
 ```
+2. Navigate into the project root directory:
+```bash
+cd Group-04-Classic-Snake-Game-c
+```
+3. Compile the source code using GCC:
+```bash
+gcc main.c -o SnakeGame
+```
+4. Launch the game executable:
+```bash
+./SnakeGame
+```
