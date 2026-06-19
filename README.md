@@ -7,22 +7,6 @@ This is our first-semester project: a professional and robust implementation of 
 
 ---
 
-### 🚀 Key Features
-* **Classic Gameplay:** Navigate the snake using arrow keys to collect food and grow longer.
-* **Smooth Gameplay Loop:** Optimized frame-rate handling for responsive snake movement.
-* **Dynamic Speed Scaling:** The game increases in difficulty and speed as your score grows.
-* **Collision Detection:** Strict boundary tracking for self-collisions and wall-collisions.
-* **Local Score Tracking:** Keeps track of your current game score in real-time.
-
-
-### 🎮 Controls
-* `W` — Move Up
-* `A` — Move Left
-* `S` — Move Down
-* `D` — Move Right
-
----
-
 ## 👥 Group Information
 
 | <img src="https://img.shields.io/badge/Serial--Number-333333?style=for-the-badge" alt="SL"/> | <img src="https://img.shields.io/badge/Full--Name-d73a49?style=for-the-badge" alt="Name"/> | <img src="https://img.shields.io/badge/Student--ID-0052cc?style=for-the-badge" alt="ID"/> | <img src="https://img.shields.io/badge/GitHub--Profile-Bright Retro Green?style=for-the-badge" alt="GitHub"/> |
@@ -37,11 +21,21 @@ Course: **CSE115** | Section: **04** | Faculty: **MSRb***
 ---
 
 ## 🚀 Key Features
+*   **Classic Gameplay:** Navigate the snake using arrow keys to collect food and grow longer.
+*   **Smooth Gameplay Loop:** Optimized frame-rate handling for responsive snake movement.
 *   **Grid-Based Movement:** Smooth rendering and coordinate tracking for fluid control.
 *   **Dynamic Speed Scaling:** The game increases in difficulty/speed as the snake grows longer.
 *   **Score & High-Score System:** Tracks current score in real-time and saves the all-time high score to a localized data file.
 *   **Collision Detection:** Strict boundary and self-collision handling for precise game-over triggers.
 
+---
+
+## 🎮 Controls
+* `W` — Move Up
+* `A` — Move Left
+* `S` — Move Down
+* `D` — Move Right
+  
 ---
 
 ## 🗃️ Repository Architecture
