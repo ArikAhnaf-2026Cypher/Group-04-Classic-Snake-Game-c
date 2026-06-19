@@ -32,6 +32,7 @@ Course: **CSE115** | Section: **04** | Faculty: **MSRb***
 This repository strictly follows the course layout rules:
 *   `main.c` — The primary entry point containing the core game loop.
 *   `requirements.txt` — Compilation and system library dependencies.
+*   `README.md` — Repository documentation and execution guide (***this file***).
 *   📂 `data/` — Local storage for high scores, custom maps, or configurations.
 *   📂 `support/` — Modular C source files (e.g., snake mechanics, food spawning, display layout).
 *   📂 `others/` — Contains academic documentation, project reports, presentations, and demo videos.
