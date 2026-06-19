@@ -1,7 +1,7 @@
 # Group-04-Classic-Snake-Game-c-(CSE115)
 A classic Snake Game developed in C, featuring smooth gameplay, snake growth mechanics, score tracking, and collision detection.
 
-# 🐍 Group 04 - Classic Snake Game ⛎
+# 🐍 Classic Snake Game 
 
 This is our first-semester project: a professional and robust implementation of the timeless classic Snake game, developed entirely in C. The project features optimized snake-growth mechanics, precise collision detection, dynamic speed scaling, and local score tracking. The implementation emphasizes performance, maintainability, and clean software design principles.
 
