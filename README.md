@@ -11,9 +11,9 @@ This is our first-semester project: a professional and robust implementation of 
 
 | <img src="https://img.shields.io/badge/Serial--Number-333333?style=for-the-badge" alt="SL"/> | <img src="https://img.shields.io/badge/Full--Name-d73a49?style=for-the-badge" alt="Name"/> | <img src="https://img.shields.io/badge/Student--ID-0052cc?style=for-the-badge" alt="ID"/> | <img src="https://img.shields.io/badge/GitHub--Profile-Bright Retro Green?style=for-the-badge" alt="GitHub"/> |
 | :---: | :---: | :---: | :---: |
-| 01 | ***Md. Arik Ahnaf*** | **`2621388042`** | [@ArikAhnaf-2026Cypher](https://github.com/ArikAhnaf-2026Cypher) |
-| 02 | ***Md. Faiyaz Farhan Adit*** | **`2624169642`** | [@faiyazfarhan28-dot](https://github.com/faiyazfarhan28-dot) |
-| 03 | ***Jannatul Tufa Rodela***  | **`2622542042`** | |
+| 01 | ***Md. Arik Ahnaf***         | **`2621388042`** | [@ArikAhnaf-2026Cypher](https://github.com/ArikAhnaf-2026Cypher)     |
+| 02 | ***Md. Faiyaz Farhan Adit*** | **`2624169642`** | [@faiyazfarhan28-dot](https://github.com/faiyazfarhan28-dot)         |
+| 03 | ***Jannatul Tufa Rodela***   | **`2622542042`** | [@jannatulrodela262-dot](https://github.com/jannatulrodela262-dot)   |
 | 04 | ***Mohammad Farhan Sadik***  | **`2625442042`** | [@mohammadfarhansadik262](https://github.com/mohammadfarhansadik262) |
 
 *Course: **CSE115** | Section: **04** | Faculty: **MSRb***
