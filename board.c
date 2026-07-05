@@ -16,6 +16,11 @@ void initializeBoard (void)
             board[row][col] = ' ';
         }
     }
+
+    /*Temporary Snake*/
+    board[6][30] = 'O';
+    board[6][31] = 'O';
+    board[6][32] = 'O';
 }
 void drawBoard (void) //Defining the drawBoard function
 
@@ -46,7 +51,7 @@ void drawBoard (void) //Defining the drawBoard function
 
         for (j = 0; j < BOARD_WIDTH; j++)
         {
-            printf (" ");
+            printf ("%c", board[i][j]); //print whatever charecter is inside this board cell
         }
 
         printf ("|\n");
