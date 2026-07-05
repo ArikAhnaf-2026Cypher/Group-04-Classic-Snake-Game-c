@@ -3,6 +3,20 @@
 #include <stdio.h>
 #include "board.h"
 
+char board [BOARD_HEIGHT][BOARD_WIDTH];
+
+void initializeBoard (void)
+{
+    int row, col;
+
+    for (row = 0; row < BOARD_HEIGHT; row ++)
+    {
+        for (col = 0; col < BOARD_WIDTH; col ++)
+        {
+            board[row][col] = ' ';
+        }
+    }
+}
 void drawBoard (void) //Defining the drawBoard function
 
 {

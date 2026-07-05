@@ -6,7 +6,11 @@
 #define BOARD_WIDTH 65 //macro 01
 #define BOARD_HEIGHT 12 //macro 02
 
-/*Draw the game board*/
+/* The game board stored in memory*/
+extern char board[BOARD_HEIGHT][BOARD_WIDTH];
+
+/*Functions*/
+void initializeBoard (void); //Function prototype
 void drawBoard (void); //Function prototype
 
 #endif //Finished!
