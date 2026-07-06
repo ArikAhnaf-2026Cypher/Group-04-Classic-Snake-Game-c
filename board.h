@@ -11,6 +11,7 @@ extern char board[BOARD_HEIGHT][BOARD_WIDTH];
 
 /*Functions*/
 void initializeBoard (void); //Function prototype
+void clearBoard (void); //Function prototype
 void drawBoard (void); //Function prototype
 
 #endif //Finished!

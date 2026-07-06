@@ -18,7 +18,19 @@ void initializeBoard (void)
         }
     }
     
+}
 
+void clearBoard (void)
+{
+    int row, col;
+
+    for (row = 0; row < BOARD_HEIGHT; row ++)
+    {
+        for (col = 0; col < BOARD_WIDTH; col ++)
+        {
+            board [row][col] = ' ';
+        }
+    }
 }
 void drawBoard (void) //Defining the drawBoard function
 
