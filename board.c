@@ -7,6 +7,7 @@ char board [BOARD_HEIGHT][BOARD_WIDTH];
 
 void initializeBoard (void)
 {
+
     int row, col;
 
     for (row = 0; row < BOARD_HEIGHT; row ++)
@@ -16,11 +17,8 @@ void initializeBoard (void)
             board[row][col] = ' ';
         }
     }
+    
 
-    /*Temporary Snake*/
-    board[6][30] = 'O';
-    board[6][31] = 'O';
-    board[6][32] = 'O';
 }
 void drawBoard (void) //Defining the drawBoard function
 

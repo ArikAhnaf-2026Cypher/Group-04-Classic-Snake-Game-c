@@ -1,13 +1,25 @@
+/* 
+The Conductor of
+The Orchestra 
+*/
+
 #include <stdio.h>
 #include "board.h"
+#include "snake.h"
 
 int main (void)
 
 {
 
-  initializeBoard (); //Create and fill the board
+    initializeBoard (); //Create an empty board
 
-  drawBoard (); //Display the number
+    initializeSnake (); //Set the Snake's starting position
 
-  return (0);
+    drawSnake (); //Draw the Snake onto the board
+
+    drawBoard (); //DIsplay the whole complete board
+
+
+     return (0);
+     
 }
