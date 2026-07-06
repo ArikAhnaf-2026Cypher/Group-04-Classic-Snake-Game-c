@@ -8,6 +8,7 @@ The Orchestra
 
 #include "board.h"
 #include "snake.h"
+#include "food.h"
 #include "input.h"
 #include "utils.h"
 
@@ -20,6 +21,7 @@ int main (void)
 
     initializeBoard (); //Create an empty board
     initializeSnake (); //Set the Snake's starting position
+    initializeFood ();//sets the food on the board
 
     system ("cls");
 
@@ -29,6 +31,8 @@ int main (void)
       clearBoard (); //Clear the board in every frame
 
       drawSnake (); //Draws a new snake in every frame, right after clearing the board
+
+      drawFood (); //Draws the food on the board
 
       moveCursorToTop (); //moves the cursor every frame to the top
 
