@@ -2,8 +2,12 @@
 
 #include <stdio.h>
 #include "board.h"
+#include "snake.h"
+#include "food.h"
 
 char board [BOARD_HEIGHT][BOARD_WIDTH];
+
+
 
 void initializeBoard (void)
 {
@@ -19,6 +23,8 @@ void initializeBoard (void)
     }
     
 }
+
+
 
 void clearBoard (void)
 {
@@ -43,13 +49,14 @@ void drawBoard (void) //Defining the drawBoard function
     printf ("                Group - 04\n");
     printf ("==================================================\n\n");  
     
-    printf ("Score : 0\n");
-    printf ("Length: 3\n\n");
+    printf ("Score : [%02d]\n", score);
+    printf ("Length: [%02d]\n\n", snakeLength);
 
     printf ("+");
 
     for (i = 0; i < BOARD_WIDTH; i ++)
     {
+
         printf ("-");
     }
 

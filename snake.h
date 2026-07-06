@@ -18,7 +18,9 @@ extern int direction;
 //Functions
 void initializeSnake (void); //functions prototype
 void drawSnake (void); //same as above
-void moveSnake (void); //same as above
+int moveSnake (void); //same as above
 void changeDirection (int newDirection); //yet another function prototype
+int checkCollision (void);
+void growSnake (void);
 
 #endif 

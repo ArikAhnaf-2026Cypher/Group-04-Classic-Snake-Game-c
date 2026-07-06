@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include <time.h>
 
 #include "food.h"
 #include "board.h"
@@ -7,6 +6,8 @@
 
 int foodX;
 int foodY;
+
+int score = 0;
 
 void initializeFood (void)
 {
@@ -40,10 +41,10 @@ void checkFoodCollision (void)
 {
     if (snakeX[0] == foodX && snakeY[0] == foodY)
     {
-        if (snakeLength < MAX_SNAKE_LENGTH)
-        {
-            snakeLength ++;
-        }
+        growSnake ();
+
+        score ++;
+
         initializeFood();
     }
 }

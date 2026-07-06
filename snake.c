@@ -22,18 +22,59 @@ void initializeSnake (void)
 }
 
 /*Draw The Snake Onto The Board (Defining the snakeDraw function): */
-void drawSnake (void)
+// void drawSnake(void)
+// {
+//     int i;
+
+//     for (i = 0; i < snakeLength; i++)
+//     {
+//         if (snakeX[i] >= 0 &&
+//             snakeX[i] < BOARD_WIDTH &&
+//             snakeY[i] >= 0 &&
+//             snakeY[i] < BOARD_HEIGHT)
+//         {
+//             board[snakeY[i]][snakeX[i]] = 'O';
+//         }
+//     }
+// }
+
+//version-02, in hopes to make the final product more refined
+void drawSnake(void)
 {
     int i;
 
-    for (i = 0; i < snakeLength; i++)
+    /* Draw the head */
+    if (snakeX[0] >= 0 && snakeX[0] < BOARD_WIDTH &&
+        snakeY[0] >= 0 && snakeY[0] < BOARD_HEIGHT)
     {
-        board[snakeY[i]][snakeX[i]] = 'O';
+        board[snakeY[0]][snakeX[0]] = '@';
+    }
+
+    /* Draw the body */
+    for (i = 1; i < snakeLength - 1; i++)
+    {
+        if (snakeX[i] >= 0 && snakeX[i] < BOARD_WIDTH &&
+            snakeY[i] >= 0 && snakeY[i] < BOARD_HEIGHT)
+        {
+            board[snakeY[i]][snakeX[i]] = 'O';
+        }
+    }
+
+    /* Draw the tail */
+    if (snakeLength > 1)
+    {
+        if (snakeX[snakeLength - 1] >= 0 &&
+            snakeX[snakeLength - 1] < BOARD_WIDTH &&
+            snakeY[snakeLength - 1] >= 0 &&
+            snakeY[snakeLength - 1] < BOARD_HEIGHT)
+        {
+            board[snakeY[snakeLength - 1]][snakeX[snakeLength - 1]] = 'o';
+        }
     }
 }
 
 /*The movement of the Snake*/
-void moveSnake (void)
+int moveSnake (void)
 {
 
     int i; 
@@ -66,7 +107,54 @@ void moveSnake (void)
             snakeY[0]++;
             break;
     }
+        
+        /* Check if the snake hit a wall */
+    
+    if (snakeX[0] < 0 || snakeX[0] >= BOARD_WIDTH)
+    {
+        return 0;
+    }
+    
+    if (snakeY[0] < 0 || snakeY[0] >= BOARD_HEIGHT)
+    {
+        return 0;
+    }
+
+    return 1;
+} 
+
+void growSnake (void)
+{
+    if (snakeLength < MAX_SNAKE_LENGTH)
+    {
+        snakeX[snakeLength] = snakeX[snakeLength - 1];
+        snakeY[snakeLength] = snakeY[snakeLength - 1];
+
+        snakeLength++;
+    }
 }
+
+int checkCollision (void)
+{
+    int i;
+
+    if (snakeX[0] < 0 || snakeX[0] >= BOARD_WIDTH ||
+        snakeY[0] < 0 || snakeY[0] >= BOARD_HEIGHT)
+    {
+        return 1;
+    }
+
+    for (i = 1; i < snakeLength; i++)
+    {
+        if (snakeX[0] == snakeX[i] && snakeY[0] == snakeY[i])
+        {
+            return 1;
+        }
+    }
+
+    return 0;
+}
+
 
 /*Change the Snakes Direction: */
 void changeDirection (int newDirection)
