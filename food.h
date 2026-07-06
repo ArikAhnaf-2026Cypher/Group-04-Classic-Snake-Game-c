@@ -7,5 +7,6 @@ extern int foodY; //global variable #2
 
 void initializeFood (void);
 void drawFood (void);
+void checkFoodCollision (void);
 
 #endif 
