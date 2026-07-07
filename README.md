@@ -21,7 +21,7 @@ This is our first-semester project: a professional and robust implementation of 
 ---
 
 ## 🚀 Key Features
-*   **Classic Gameplay:** Navigate the snake using arrow keys to collect food and grow longer.
+*   **Classic Gameplay:** Navigate the snake using W-A-S-D keys to collect food and grow longer.
 *   **Smooth Gameplay Loop:** Optimized frame-rate handling for responsive snake movement.
 *   **Grid-Based Movement:** Smooth rendering and coordinate tracking for fluid control.
 *   **Dynamic Speed Scaling:** The game increases in difficulty/speed as the snake grows longer.
@@ -66,9 +66,9 @@ cd Group-04-Classic-Snake-Game-c
 ```
 3. Compile the source code using GCC:
 ```bash
-gcc main.c -o SnakeGame
+gcc main.c board.c snake.c input.c food.c utils.c -o main 
 ```
 4. Launch the game executable:
 ```bash
-./SnakeGame
+./main
 ```
