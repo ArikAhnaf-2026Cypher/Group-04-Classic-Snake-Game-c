@@ -45,8 +45,8 @@ void drawBoard (void) //Defining the drawBoard function
     int i, j;
 
 
-    printf ("==================================================\n");
     setColor (COLOR_GREEN);
+    printf ("==================================================\n");
     printf ("              CLASSIC SNAKE GAME\n");
     printf ("                  Group - 04\n");
     printf ("==================================================\n\n");  
