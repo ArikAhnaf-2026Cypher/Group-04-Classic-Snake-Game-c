@@ -86,3 +86,17 @@ void hideCursor(void)
 
     SetConsoleCursorInfo(console, &cursorInfo);
 }
+
+void setColor (int color)
+{
+    HANDLE console = GetStdHandle (STD_OUTPUT_HANDLE);
+
+    SetConsoleTextAttribute (console, color);
+}
+
+void resetColor (void)
+{
+    HANDLE console = GetStdHandle (STD_OUTPUT_HANDLE);
+
+    SetConsoleTextAttribute (console, 7); //7 is the normal generic gray console color
+}

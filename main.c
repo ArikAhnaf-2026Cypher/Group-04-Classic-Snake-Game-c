@@ -20,6 +20,8 @@ int main (void)
 {
     int gameRunning = 1;
 
+    int gameSpeed = 250;
+
     srand (time (NULL) );
 
 
@@ -43,7 +45,7 @@ int main (void)
       if (gameRunning)
       {
 
-        if (checkCollision())
+        if (checkCollision())                       
         {
           gameRunning = 0;
         }
@@ -52,6 +54,30 @@ int main (void)
       if (gameRunning)
       {
         checkFoodCollision ();
+      }
+      if (score >= 25)
+      {
+        gameSpeed = 50;
+      }
+      else if (score >= 20)
+      {
+        gameSpeed = 80;
+      }
+      else if (score >= 15)
+      {
+        gameSpeed = 110;
+      }
+      else if (score >= 10)
+      {
+        gameSpeed = 140;
+      }
+      else if (score >= 5)
+      {
+        gameSpeed = 170;
+      }
+      else 
+      {
+        gameSpeed = 200;
       }
 
 
@@ -65,10 +91,10 @@ int main (void)
 
       if (!gameRunning)
       {
-        break;
+          break;
       }
 
-      Sleep (250); //Pauses for 250 miliseconds
+      Sleep (gameSpeed); //Pauses for 250 miliseconds
 
     }
 
