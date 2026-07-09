@@ -2,7 +2,7 @@
 #include "board.h"
 
 /* The Actual Snake Data (Snake position and size): */
-int snakeX [MAX_SNAKE_LENGTH]; //x coordinate of the snake on the board
+int snakeX [MAX_SNAKE_LENGTH]; 
 int snakeY [MAX_SNAKE_LENGTH]; //y coordinate of the snake on the board
 int snakeLength = 3;
 
@@ -11,7 +11,7 @@ int direction = RIGHT;
 /*Initialize The Snake (Defining the initializeSnake functions): */
 void initializeSnake (void)
 {
-    snakeX [0] = 32; //snake head
+    snakeX [0] = 32; 
     snakeY [0] = 6; //snake head
 
     snakeX [1] = 31; //snake body
@@ -89,7 +89,7 @@ int moveSnake (void)
 
     /*Move the head of the Snake*/
 
-    switch (direction)
+    switch (direction) 
     {
         case RIGHT:
             snakeX[0]++;
