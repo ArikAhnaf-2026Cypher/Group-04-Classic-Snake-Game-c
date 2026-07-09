@@ -13,7 +13,7 @@ char board [BOARD_HEIGHT][BOARD_WIDTH];
 void initializeBoard (void) // the function for initializeBoard
 {
 
-    int row, col;
+    int row, col; //arik
 
     for (row = 0; row < BOARD_HEIGHT; row ++)
     {
