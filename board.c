@@ -1,7 +1,7 @@
-/* Now we will writing the actual code for the Board of the snake Game*/-
+/* Now we will writing the actual code for the Board of the snake Game*/
 
 #include <stdio.h>
-#include "board.h" //ARIK
+#include "board.h" 
 #include "snake.h"
 #include "food.h"
 #include "utils.h"
