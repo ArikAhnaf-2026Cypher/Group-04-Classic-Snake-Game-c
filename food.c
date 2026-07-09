@@ -1,15 +1,14 @@
-#include <stdlib.h>
+#include <stdlib.h> //this is the Standard library header file
 
-#include "food.h"
+#include "food.h" 
 #include "board.h"
 #include "snake.h"
-
 int foodX;
 int foodY;
 
 int score = 0;
 
-void initializeFood (void)
+void initializeFood (void) 
 {
     int i;
     int validPosition;
@@ -32,12 +31,12 @@ void initializeFood (void)
     } while (!validPosition);
 }
 
-void drawFood (void)
+void drawFood (void) 
 {
     board[foodY][foodX] = '*';
 }
 
-void checkFoodCollision (void)
+void checkFoodCollision (void) 
 {
     if (snakeX[0] == foodX && snakeY[0] == foodY)
     {
