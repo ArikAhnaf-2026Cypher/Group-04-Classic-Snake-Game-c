@@ -10,7 +10,7 @@ char board [BOARD_HEIGHT][BOARD_WIDTH];
 
 
 
-void initializeBoard (void)
+void initializeBoard (void) // the function for initializeBoard
 {
 
     int row, col;
