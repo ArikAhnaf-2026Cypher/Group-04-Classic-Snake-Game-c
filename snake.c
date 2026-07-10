@@ -17,7 +17,7 @@ void initializeSnake (void)
     snakeY[1] = 6;    // First body segment y-position
     snakeX[2] = 30;   // Tail x-position
     snakeY[2] = 6;    // Tail y-positio
-   
+}
 
 /*Draw The Snake Onto The Board (Defining the snakeDraw function): */
 // void drawSnake(void)

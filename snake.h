@@ -1,5 +1,5 @@
-#ifndef SNAKE_H          // Start of include guard: only compile if SNAKE_H hasn't been defined yet
-#define SNAKE_H           // Define SNAKE_H so this file won't be included/processed again
+#ifndef  SNAKE_H          // Start of include guard: only compile if SNAKE_H hasn't been defined yet
+#define  SNAKE_H           // Define SNAKE_H so this file won't be included/processed again
 
 #define MAX_SNAKE_LENGTH 100   // Constant: maximum number of segments the snake can have
 
