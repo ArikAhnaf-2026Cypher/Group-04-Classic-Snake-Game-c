@@ -1,5 +1,5 @@
 
-    #include <stdlib.h> // Standard library, used for the rand() function
+#include <stdlib.h> // Standard library, used for the rand() function
 
 #include "food.h"   // Header file for food-related functions
 #include "board.h"  // Header file for the game board
