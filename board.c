@@ -108,18 +108,79 @@ void drawBoard (void)
 {
     int i, j;
     // --- 1. RENDER GAME HEADER ---
+    
     setColor (COLOR_GREEN);
-    printf ("==================================================\n");
-    printf ("              CLASSIC SNAKE GAME\n");
-    printf ("                  Group - 04\n");
-    printf ("==================================================\n\n");  
+    printf ("===================================================================\n");
     resetColor ();
+
+    setColor (COLOR_CYAN);
+    printf ("                         CLASSIC SNAKE GAME\n");
+    resetColor ();
+
+    setColor (COLOR_CYAN);
+    printf ("                             Group - 04\n");
+    resetColor ();
+
+    setColor (COLOR_CYAN);
+    printf ("                    Eat Hearts. Grow. Stay Alive.\n");
+    resetColor ();
+
+    setColor (COLOR_GREEN);
+    printf ("===================================================================\n\n"); 
+    resetColor ();
+
+    /*----------------- Hud Headings ----------------*/
+
+    setColor (COLOR_CYAN);
+
+    printf ("% - 32s", "CONTROLS:");
+    printf ("GAME INFO:\n");
+
+    printf ("% - 32s", "---------");
+    printf ("----------\n");
+
+    resetColor ();
+
+    /* ----------------CONTROLS AND GAME INFORMATION-----------------*/
+
+    setColor (COLOR_WHITE);
+    printf ("% - 32s", "W  -  Move Up");
+
+    if (showingGameOver)
+    {
+        setColor (COLOR_RED);
+        printf ("Status : [The Serpent Has Fallen]\n");
+    }
+    else
+    {
+        setColor(COLOR_BLUE);
+        printf ("Status : [Slithering...]\n");
+    }
+
+    setColor (COLOR_WHITE);
+    printf ("% - 32s", "A  -  Move Left");
+
+    setColor (COLOR_BLUE);
+    printf ("Score  : [%02d]\n", score);
+
+    setColor (COLOR_WHITE);
+    printf ("% - 32s", "S  -  Move Down");
+
+    setColor (COLOR_BLUE);
+    printf ("Length : [%02d]\n", snakeLength);
+
+    setColor (COLOR_WHITE);
+    printf ("% - 32s", "D  -  Move Right");
+
+    printf ("\n\n");
+
+    resetColor();
     
     // --- 2. RENDER SCOREBOARD ---
-    setColor (COLOR_BLUE);
-    printf ("Score : [%02d]\n", score);
-    printf ("Length: [%02d]\n\n", snakeLength);
-    resetColor ();
+    // setColor (COLOR_BLUE);
+    // printf ("Score : [%02d]\n", score);
+    // printf ("Length: [%02d]\n\n", snakeLength);
+    // resetColor ();
     
     // --- 3. RENDER TOP BORDER ---
     setColor (COLOR_CYAN);
@@ -198,7 +259,7 @@ void drawBoard (void)
             if (i == 4)
             {
                 //GAME OVER!
-                setColor (COLOR_MAGENTA);
+                setColor (COLOR_RED);
             }
             else if (i == 3 || i == 5)
             {
@@ -208,7 +269,7 @@ void drawBoard (void)
             else if (i ==7 || i == 8)
             {
                 //Final score and snake length
-                setColor (COLOR_BLUE);
+                setColor (COLOR_MAGENTA);
             }
             else if (i == 10)
             {
@@ -281,10 +342,10 @@ void drawBoard (void)
     printf ("+\n"); // Bottom-rigth corner and newline
     resetColor ();
 
-    // ---6. RENDER GAME CONTROLS ---
-    printf ("Controls:\n");
-    printf ("W  -  Move Up\n");
-    printf ("A  -  Move Left\n");
-    printf ("S  -  Move Down\n");
-    printf ("D  -  Move Right\n");
+    // // ---6. RENDER GAME CONTROLS ---
+    // printf ("Controls:\n");
+    // printf ("W  -  Move Up\n");
+    // printf ("A  -  Move Left\n");
+    // printf ("S  -  Move Down\n");
+    // printf ("D  -  Move Right\n");
 }
