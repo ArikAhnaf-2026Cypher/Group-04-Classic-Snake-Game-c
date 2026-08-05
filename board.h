@@ -16,5 +16,6 @@ void clearBoard (void); //Function prototype
 // void drawHUD(void); //Function prototype
 // void drawBoardContents(void); //Function prototype
 void drawBoard (void);
+void prepareGameOverBoard(void); //new
 
 #endif //Finished!

@@ -7,6 +7,7 @@
 #define COLOR_RED          12
 #define COLOR_YELLOW       14
 #define COLOR_WHITE        15
+#define COLOR_MAGENTA      13
 
 void moveCursorToTop (void);
 void hideCursor (void);

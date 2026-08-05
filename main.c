@@ -7,6 +7,7 @@ The Orchestra
 #include <windows.h>
 #include <stdlib.h>
 #include <time.h>
+#include <conio.h>
 
 #include "board.h"
 #include "snake.h"
@@ -58,23 +59,23 @@ int main (void)
       }
       if (score >= 25)
       {
-        gameSpeed = 50;
+        gameSpeed = 30;
       }
       else if (score >= 20)
       {
-        gameSpeed = 80;
+        gameSpeed = 50;
       }
       else if (score >= 15)
       {
-        gameSpeed = 110;
+        gameSpeed = 80;
       }
       else if (score >= 10)
       {
-        gameSpeed = 140;
+        gameSpeed = 110;
       }
       else if (score >= 5)
       {
-        gameSpeed = 170;
+        gameSpeed = 140;
       }
       else 
       {
@@ -82,31 +83,60 @@ int main (void)
       }
 
 
-      drawSnake ();
+      // drawSnake ();
 
-      drawFood (); //Draws the food on the board
+      // drawFood (); //Draws the food on the board
 
-      moveCursorToTop (); //moves the cursor every frame to the top
+      // moveCursorToTop (); //moves the cursor every frame to the top
 
-      drawBoard (); //Display the whole complete board
+      // drawBoard (); //Display the whole complete board
+
+      // if (!gameRunning)
+      // {
+      //     break;
+      // }
+
+      // Sleep (gameSpeed); //Pauses for 250 miliseconds
 
       if (!gameRunning)
       {
-          break;
+        /*
+        Remove the snake and food, and place the 
+        game - over inside the board.*/
+        prepareGameOverBoard ();
+
+        /*
+        Clear the old frame and display the 
+        "Game - Over" board as the final frame.
+        */
+       moveCursorToTop ();
+       drawBoard ();
+
+       break;
       }
 
-      Sleep (gameSpeed); //Pauses for 250 miliseconds
+      drawSnake ();
+
+      drawFood ();
+
+      moveCursorToTop ();
+
+      drawBoard ();
+
+      Sleep (gameSpeed);
 
     }
 
-    printf ("\n");
-    printf ("==============================\n");
-    printf ("         GAME OVER!\n");
-    printf ("==============================\n");
-    printf ("Final Score : %d\n", score);
-    printf ("Snake Length: %d\n", snakeLength);
-    printf ("\n");
-    system ("Pause\n");
+    _getch ();
+
+    // printf ("\n");
+    // printf ("==============================\n");
+    // printf ("         GAME OVER!\n");
+    // printf ("==============================\n");
+    // printf ("Final Score : %d\n", score);
+    // printf ("Snake Length: %d\n", snakeLength);
+    // printf ("\n");
+    // system ("Pause\n");
 
     return (0);
 

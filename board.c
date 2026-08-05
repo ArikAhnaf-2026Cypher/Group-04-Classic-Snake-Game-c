@@ -1,6 +1,7 @@
 /* Now we will writing the actual code for the Board of the snake Game*/
 
 #include <stdio.h>
+#include <string.h> //new
 #include "board.h" 
 #include "snake.h"
 #include "food.h"
@@ -10,7 +11,10 @@
 
 // The 2D grid representing the game board boundaries and contents
 char board[BOARD_HEIGHT][BOARD_WIDTH];
-/**
+
+static int showingGameOver = 0;
+
+/*
 * Intializes the game board to empty state at program start.
 * Fills every cell of the 2D board array with space characters
 * to ensure no garbage values are displayed during first render 
@@ -52,7 +56,49 @@ void clearBoard (void)
     }
 }
 
-/**
+/*
+Writes one line of text in the horizontal center of the board.
+This function only changes the board array.
+*/
+static void writeCenteredText (int row, const char text [])
+{
+    int length, StartingColumn, i;
+
+    length = (int) strlen (text);
+    StartingColumn = (BOARD_WIDTH - length) / 2;
+
+    for (i = 0; i < length; i++)
+    {
+        board [row] [StartingColumn + i] = text [i];
+    }
+}
+
+/*
+Prepares the contents that will be inside of the board when the game finishes.
+*/
+void prepareGameOverBoard (void)
+{
+    char scoreText [30];
+    char lengthText [30];
+
+    showingGameOver = 1;
+
+    clearBoard ();
+
+    sprintf (scoreText, "Final Score : %d", score);
+    sprintf (lengthText, "Snake Length : %d", snakeLength);
+
+    writeCenteredText (3, "==============================");
+    writeCenteredText (4, "GAME OVER!");
+    writeCenteredText (5, "==============================");
+
+    writeCenteredText (7, scoreText);
+    writeCenteredText (8, lengthText);
+
+    writeCenteredText (10, "Press Any Key To Continue");
+}
+
+/*
 * Renders the entire game screen to the console.
 * This includes the game title header, the current score/length stats,
 * and the top boundary of the gameplay area.
@@ -90,46 +136,133 @@ void drawBoard (void)
     resetColor ();
     
     // --- 4. RENDER PLAYFIELD SIDEWALLS AND CELLS ---
+    // for (i = 0; i < BOARD_HEIGHT; i++)
+    // {
+    //     setColor (COLOR_CYAN);
+    //     printf ("|"); // Draw left vertical boundary wall
+    //     resetColor ();
+
+    //     for (j = 0; j < BOARD_WIDTH; j++)
+    //     {
+    //         // printf ("%c", board[i][j]); //print whatever charecter is inside this board cell
+    //         if (board[i][j] == '@')
+    //         {
+    //             // Render the snake's head
+    //             setColor (COLOR_YELLOW);
+    //             printf ("@");
+    //             resetColor ();
+    //         }
+
+    //         else if (board[i][j] == 'O')
+    //         {
+    //             // Render the snake's body segments
+    //             setColor (COLOR_YELLOW);
+    //             printf ("O");
+    //             resetColor ();
+    //         }
+
+    //         else if (board[i][j] == '*')
+    //         {
+    //             // Render food pieces
+    //             setColor (COLOR_RED);
+    //             printf ("*");
+    //             resetColor ();
+    //         }
+
+    //         else 
+    //         {
+    //             // Render empty spaces or background titles
+    //             printf ("%c", board[i][j]);
+    //         }
+    //     }
+
+    //     setColor (COLOR_CYAN);
+    //     printf ("|\n");
+    //     resetColor ();
+    // }
+
     for (i = 0; i < BOARD_HEIGHT; i++)
     {
+        //Draw the left wall
         setColor (COLOR_CYAN);
-        printf ("|"); // Draw left vertical boundary wall
+        printf ("|");
         resetColor ();
 
-        for (j = 0; j < BOARD_WIDTH; j++)
+        if (showingGameOver)
         {
-            // printf ("%c", board[i][j]); //print whatever charecter is inside this board cell
-            if (board[i][j] == '@')
+            /*
+            Select a color depending on which 
+            game over message row is being printed.
+            */
+
+            if (i == 4)
             {
-                // Render the snake's head
-                setColor (COLOR_YELLOW);
-                printf ("@");
-                resetColor ();
+                //GAME OVER!
+                setColor (COLOR_MAGENTA);
+            }
+            else if (i == 3 || i == 5)
+            {
+                //The lines above and bellow Game Over
+                setColor (COLOR_GREEN);
+            }
+            else if (i ==7 || i == 8)
+            {
+                //Final score and snake length
+                setColor (COLOR_BLUE);
+            }
+            else if (i == 10)
+            {
+                //Press any key message
+                setColor (COLOR_CYAN);
             }
 
-            else if (board[i][j] == 'O')
-            {
-                // Render the snake's body segments
-                setColor (COLOR_YELLOW);
-                printf ("O");
-                resetColor ();
-            }
+            /*
+            Print the game over text normally.
+            Don NOT treat O as a snake body in this part.
+            */
+           for (j = 0; j < BOARD_WIDTH; j++)
+           {
+            printf ("%c", board [i] [j]);
+           }
 
-            else if (board[i][j] == '*')
-            {
-                // Render food pieces
-                setColor (COLOR_RED);
-                printf ("*");
-                resetColor ();
-            }
+           resetColor ();
+        }
+        else 
+        {
+            /*
+            Normal Gmae Drawing.
+            Here, @ means head, O means body, 
+            and * means food.
+            */
 
-            else 
+            for (j = 0; j < BOARD_WIDTH; j++)
             {
-                // Render empty spaces or background titles
-                printf ("%c", board[i][j]);
+                if (board [i] [j] == '@')
+                {
+                    setColor (COLOR_YELLOW);
+                    printf ("@");
+                    resetColor ();
+                }
+                else if (board [i] [j] == 'O')
+                {
+                    setColor (COLOR_YELLOW);
+                    printf ("O");
+                    resetColor ();
+                }
+                else if (board [i] [j] == '*')
+                {
+                    setColor (COLOR_RED);
+                    printf ("*");
+                    resetColor();
+                }
+                else 
+                {
+                    printf ("%c", board [i] [j]);
+                }
             }
         }
-
+        /*
+        Draw the right wall*/
         setColor (COLOR_CYAN);
         printf ("|\n");
         resetColor ();
