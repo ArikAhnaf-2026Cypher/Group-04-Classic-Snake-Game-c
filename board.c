@@ -252,7 +252,7 @@ void drawBoard (void)
                 else if (board [i] [j] == '*')
                 {
                     setColor (COLOR_RED);
-                    printf ("*");
+                    printf ("\xE2\x9D\xA4"); //BIG HEART XD
                     resetColor();
                 }
                 else 

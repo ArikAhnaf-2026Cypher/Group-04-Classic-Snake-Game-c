@@ -24,6 +24,8 @@ int main (void)
 
     int gameSpeed = 250;
 
+    SetConsoleOutputCP (CP_UTF8);
+
     srand (time (NULL) );
 
 
