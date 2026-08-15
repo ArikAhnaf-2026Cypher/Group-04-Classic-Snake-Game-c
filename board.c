@@ -288,7 +288,7 @@ void drawBoard (void)
             }
             else if (i == 6)
             {
-                setColor (COLOR_WHITE);
+                setColor (COLOR_CYAN);
             }
             else if (i == 7 || i == 8 || i == 9)
             {

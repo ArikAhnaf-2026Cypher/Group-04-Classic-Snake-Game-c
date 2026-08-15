@@ -16,9 +16,8 @@ void loadGameData (void)
 
     file = fopen ("data/highscores.txt", "r"); //open highscore.txt in read (r) mode
 
-    if (file == '\0')
+    if (file == NULL) 
     {
-        gameData.highscores [0];
         return;
     }
     //if the file has no values in it, then highscore will be 0
@@ -35,9 +34,9 @@ void saveGameData (void)
 {
     FILE *file;
 
-    file = fopen ("data/highscore.txt", "w"); //"w" = write mode
+    file = fopen ("data/highscores.txt", "w"); //"w" = write mode
 
-    if (file == '\0')
+    if (file == NULL)
     {
         return;
     }
