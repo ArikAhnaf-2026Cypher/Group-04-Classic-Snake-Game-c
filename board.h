@@ -3,7 +3,7 @@
 #define BOARD_H //Mark this file as included
 
 /*Board Dimensions*/
-#define BOARD_WIDTH 65 //macro 01
+#define BOARD_WIDTH 67 //macro 01
 #define BOARD_HEIGHT 12 //macro 02
 
 /* The game board stored in memory*/

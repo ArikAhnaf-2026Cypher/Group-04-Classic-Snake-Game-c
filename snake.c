@@ -11,11 +11,11 @@ int direction = RIGHT; //current movement direction
 /* Sets up snake's starting position and length */
 void initializeSnake (void)
 {
-    snakeX[0] = 32;   // Head x-position
+    snakeX[0] = 33;   // Head x-position
     snakeY[0] = 6;    // Head y-position
-    snakeX[1] = 31;   // First body segment x-position
+    snakeX[1] = 32;   // First body segment x-position
     snakeY[1] = 6;    // First body segment y-position
-    snakeX[2] = 30;   // Tail x-position
+    snakeX[2] = 31;   // Tail x-position
     snakeY[2] = 6;    // Tail y-positio
 }
 

@@ -6,6 +6,7 @@
 #include "snake.h"
 #include "food.h"
 #include "utils.h"
+#include "game.h"
 
 
 
@@ -78,24 +79,36 @@ Prepares the contents that will be inside of the board when the game finishes.
 */
 void prepareGameOverBoard (void)
 {
+    // char lengthText [30]; //change
+    
     char scoreText [30];
-    char lengthText [30];
+    char firstText[30];
+    char secondText[30];
+    char thirdText[30];
 
     showingGameOver = 1;
 
     clearBoard ();
 
-    sprintf (scoreText, "Final Score : %d", score);
-    sprintf (lengthText, "Snake Length : %d", snakeLength);
+    sprintf (scoreText, "Final Score : %d", score);  
+    // sprintf (lengthText, "Snake Length : %d", snakeLength); //change
+    sprintf(firstText,  "1st Place : %d", gameData.highscores[0]);
+    sprintf(secondText, "2nd Place : %d", gameData.highscores[1]);
+    sprintf(thirdText,  "3rd Place : %d", gameData.highscores[2]);
 
-    writeCenteredText (3, "==============================");
-    writeCenteredText (4, "GAME OVER!");
-    writeCenteredText (5, "==============================");
+    writeCenteredText (0, "==============================");
+    writeCenteredText (1, "GAME OVER!");
+    writeCenteredText (2, "==============================");
 
-    writeCenteredText (7, scoreText);
-    writeCenteredText (8, lengthText);
+    writeCenteredText (4, scoreText);
+    // writeCenteredText (8, lengthText); //change
+    writeCenteredText(6, "LEADERBOARD");
 
-    writeCenteredText (10, "Press Any Key To Continue");
+    writeCenteredText(7, firstText);
+    writeCenteredText(8, secondText);
+    writeCenteredText(9, thirdText);
+
+    writeCenteredText (11, "Press Any Key To Continue");
 }
 
 /*
@@ -110,23 +123,23 @@ void drawBoard (void)
     // --- 1. RENDER GAME HEADER ---
     
     setColor (COLOR_GREEN);
-    printf ("===================================================================\n");
+    printf ("=====================================================================\n");
     resetColor ();
 
     setColor (COLOR_CYAN);
-    printf ("                         CLASSIC SNAKE GAME\n");
+    printf ("                           CLASSIC SNAKE GAME\n");
     resetColor ();
 
     setColor (COLOR_CYAN);
-    printf ("                             Group - 04\n");
+    printf ("                               Group - 04\n");
     resetColor ();
 
     setColor (COLOR_CYAN);
-    printf ("                    Eat Hearts. Grow. Stay Alive.\n");
+    printf ("                      Eat Hearts. Grow. Stay Alive.\n");
     resetColor ();
 
     setColor (COLOR_GREEN);
-    printf ("===================================================================\n\n"); 
+    printf ("=====================================================================\n\n"); 
     resetColor ();
 
     /*----------------- Hud Headings ----------------*/
@@ -149,28 +162,31 @@ void drawBoard (void)
     if (showingGameOver)
     {
         setColor (COLOR_RED);
-        printf ("Status : [The Serpent Has Fallen]\n");
+        printf ("Status     : [The Serpent Has Fallen]\n");
     }
     else
     {
         setColor(COLOR_BLUE);
-        printf ("Status : [Slithering...]\n");
+        printf ("Status     : [Slithering...]\n");
     }
 
     setColor (COLOR_WHITE);
     printf ("% - 32s", "A  -  Move Left");
 
     setColor (COLOR_BLUE);
-    printf ("Score  : [%02d]\n", score);
+    printf ("Score      : [%02d]\n", score);
 
     setColor (COLOR_WHITE);
     printf ("% - 32s", "S  -  Move Down");
 
     setColor (COLOR_BLUE);
-    printf ("Length : [%02d]\n", snakeLength);
+    printf ("Length     : [%02d]\n", snakeLength);
 
     setColor (COLOR_WHITE);
     printf ("% - 32s", "D  -  Move Right");
+
+    setColor (COLOR_BLUE);
+    printf ("High Score : [%02d]\n", gameData.highscores [0]);
 
     printf ("\n\n");
 
@@ -256,22 +272,30 @@ void drawBoard (void)
             game over message row is being printed.
             */
 
-            if (i == 4)
+            if (i == 1)
             {
                 //GAME OVER!
                 setColor (COLOR_RED);
             }
-            else if (i == 3 || i == 5)
+            else if (i == 0 || i == 2)
             {
                 //The lines above and bellow Game Over
                 setColor (COLOR_GREEN);
             }
-            else if (i ==7 || i == 8)
+            else if (i == 4)
+            {
+                setColor (COLOR_BLUE);
+            }
+            else if (i == 6)
+            {
+                setColor (COLOR_WHITE);
+            }
+            else if (i == 7 || i == 8 || i == 9)
             {
                 //Final score and snake length
                 setColor (COLOR_MAGENTA);
             }
-            else if (i == 10)
+            else if (i == 11)
             {
                 //Press any key message
                 setColor (COLOR_CYAN);

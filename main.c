@@ -9,12 +9,13 @@ The Orchestra
 #include <time.h>
 #include <conio.h>
 
+//total 6 header files are being used
 #include "board.h"
 #include "snake.h"
 #include "food.h"
 #include "input.h"
 #include "utils.h"
-//#include "game.h" (If we make this header file, we will use it hopefully XDDD)
+#include "game.h" //I finally made the header file!!!!!
 
 
 int main (void)
@@ -28,6 +29,8 @@ int main (void)
 
     srand (time (NULL) );
 
+
+    loadGameData(); //loads the saved highscore 
 
     initializeBoard (); //Create an empty board
     initializeSnake (); //Set the Snake's starting position
@@ -102,6 +105,8 @@ int main (void)
 
       if (!gameRunning)
       {
+
+        updateHighScores (score);
         /*
         Remove the snake and food, and place the 
         game - over inside the board.*/
