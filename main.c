@@ -130,6 +130,8 @@ int main (void)
 
       drawBoard ();
 
+      fflush (stdout);
+
       Sleep (gameSpeed);
 
     }

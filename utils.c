@@ -16,52 +16,52 @@
 #include <windows.h>
 #include "utils.h"
 
-void moveCursorToTop(void)
-{
-    HANDLE console;
-    CONSOLE_SCREEN_BUFFER_INFO csbi;
-    DWORD written;
-    DWORD cells;
-    COORD home = {0, 0};
+// void moveCursorToTop(void)
+// {
+//     HANDLE console;
+//     CONSOLE_SCREEN_BUFFER_INFO csbi;
+//     DWORD written;
+//     DWORD cells;
+//     COORD home = {0, 0};
 
-    console = GetStdHandle(STD_OUTPUT_HANDLE);
+//     console = GetStdHandle(STD_OUTPUT_HANDLE);
 
-    GetConsoleScreenBufferInfo(console, &csbi);
+//     GetConsoleScreenBufferInfo(console, &csbi);
 
-    cells = csbi.dwSize.X * csbi.dwSize.Y;
+//     cells = csbi.dwSize.X * csbi.dwSize.Y;
 
-    FillConsoleOutputCharacter(
-        console,
-        ' ',
-        cells,
-        home,
-        &written
-    );
+//     FillConsoleOutputCharacter(
+//         console,
+//         ' ',
+//         cells,
+//         home,
+//         &written
+//     );
 
 
-    FillConsoleOutputAttribute(
-        console,
-        csbi.wAttributes,
-        cells,
-        home,
-        &written
-    );
+//     FillConsoleOutputAttribute(
+//         console,
+//         csbi.wAttributes,
+//         cells,
+//         home,
+//         &written
+//     );
 
-    SetConsoleCursorPosition(console, home);
-}
+//     SetConsoleCursorPosition(console, home);
+// }
 // #include <windows.h>
 // #include "utils.h"
 
-// void moveCursorToTop(void)
-// {
-//     HANDLE console = GetStdHandle(STD_OUTPUT_HANDLE);
+void moveCursorToTop(void)
+{
+    HANDLE console = GetStdHandle(STD_OUTPUT_HANDLE);
 
-//     COORD position;
-//     position.X = 0;
-//     position.Y = 0;
+    COORD position;
+    position.X = 0;
+    position.Y = 0;
 
-//     SetConsoleCursorPosition(console, position);
-// }
+    SetConsoleCursorPosition(console, position);
+}
 
 
 // void hideCursor(void)
