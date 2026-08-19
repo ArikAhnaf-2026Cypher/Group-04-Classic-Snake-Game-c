@@ -66,9 +66,9 @@ cd Group-04-Classic-Snake-Game-c
 ```
 3. Compile the source code using GCC:
 ```bash
-gcc main.c board.c snake.c input.c food.c utils.c -o main 
+gcc main.c board.c snake.c game.c input.c food.c utils.c -o snake.exe 
 ```
 4. Launch the game executable:
 ```bash
-./main
+./snake.exe
 ```
